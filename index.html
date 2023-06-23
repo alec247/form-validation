@@ -9,27 +9,51 @@
     <body>
         <!-- Email, Country, Zip Code, Password and Password Confirmation -->
         <form>
-            <label for="email">Email</label><br />
-            <input placeholder="name@domain.com" name="email" id="email" />
-            <br />
-            <label for="countryInput">Country</label><br />
-            <select name="country" id="country">
-                <option value="usa">United States</option>
-                <option value="canada">Canada</option>
-                <option value="mexico">Mexico</option></select
-            ><br />
-            <label for="zip">Zip Code</label><br />
-            <input placeholder="e.g. 91234" name="zip" id="zip" /><br />
-            <label for="password"
-                >Password (Must be 8 characters in length and contain 1
-                uppercase, 1 lowercase, and 1 special character or number) </label
-            ><br />
-            <input placeholder="Enter a strong password" id="password" /><br />
-            <label for="confirm-password">Confirm Password</label><br />
-            <input placeholder="Re-enter password" id="confirm-password" />
-            <br />
-            <button id="submit">Submit</button>
+            <fieldset>
+                <div>
+                    <label for="email">*Email</label><br />
+                    <input
+                        placeholder="name@domain.com"
+                        name="email"
+                        id="email"
+                    />
+                    <div id="email-error" class="error"></div>
+                </div>
+                <div>
+                    <label for="countryInput">*Country</label><br />
+                    <select name="country" id="country">
+                        <option value="blank">Select Your Country</option>
+                        <option value="usa">United States</option>
+                        <option value="canada">Canada</option>
+                        <option value="mexico">Mexico</option></select
+                    ><br />
+                </div>
+                <div>
+                    <label for="zip">*Zip Code</label><br />
+                    <input placeholder="e.g. 91234" name="zip" id="zip" /><br />
+                    <div id="zip-error" class="error"></div>
+                </div>
+                <div>
+                    <label for="password">*Password</label><br />
+                    <br />
+                    <input
+                        placeholder="Enter a strong password"
+                        id="password"
+                    /><br /><label for="password" id="pw-constraints">
+                        (Must be 8 characters in length and contain 1 uppercase,
+                        1 lowercase, and 1 special character or number)</label
+                    >
+                    <div id="password-error" class="error"></div>
+                </div>
+                <div>
+                    <label for="confirm">*Confirm Password</label><br />
+                    <input placeholder="Re-enter password" id="confirm" />
+                    <div id="confirm-error" class="error"></div>
+                </div>
+                <div><button id="submit">Submit</button></div>
+            </fieldset>
         </form>
+        <div><h1 id="success" class="hidden">Form submitted!</h1></div>
         <script src="index.js"></script>
     </body>
 </html>
